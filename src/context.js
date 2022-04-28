@@ -1,26 +1,26 @@
-import React, { useState, useContext } from "react";
-import sublinks from "./data";
+import React, { useState, useContext } from 'react'
+// import sublinks from './data'
 
-const AppContext = React.createContext();
+const AppContext = React.createContext()
 
 export const AppProvider = ({ children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isSubmenuOpen, setIsSubmenuOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
 
-  function openSidebar() {
-    setIsSidebarOpen(true);
+  function openSidebar () {
+    return setIsSidebarOpen(true)
   }
 
-  function closeSidebar() {
-    setIsSidebarOpen(false);
+  function closeSidebar () {
+    return setIsSidebarOpen(false)
   }
 
-  function openSubmenu() {
-    setIsSubmenuOpen(true);
+  function openSubmenu () {
+    return setIsSubmenuOpen(true)
   }
 
-  function closeSubmenu() {
-    setIsSubmenuOpen(false);
+  function closeSubmenu () {
+    return setIsSubmenuOpen(false)
   }
   return (
     <AppContext.Provider
@@ -35,9 +35,13 @@ export const AppProvider = ({ children }) => {
     >
       {children}
     </AppContext.Provider>
-  );
-};
+  )
+}
 
 export const GlobalContext = () => {
-  return useContext(AppContext);
-};
+  const context = useContext(AppContext)
+  if (context === undefined) {
+    throw new Error('useUserContext was used outside of its Provider')
+  }
+  return context
+}

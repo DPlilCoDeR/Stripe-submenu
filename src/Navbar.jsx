@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./images/logo.svg";
 import { FaBars } from "react-icons/fa";
-import { GlobalContext, GloblaContext } from "./context";
+import { GlobalContext } from "./context";
 
 const Navbar = () => {
   const { openSidebar, openSubmenu, closeSubmenu } = GlobalContext();
