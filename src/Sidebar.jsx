@@ -4,7 +4,8 @@ import sublinks from './data'
 import { GlobalContext } from './context'
 
 const Sidebar = () => {
-  const { isSidebarOpen, closeSidebar } = GlobalContext()
+  const { closeSidebar, isSidebarOpen, isSubmenuOpen } = GlobalContext()
+  console.log(isSidebarOpen, isSubmenuOpen)
 
   return (
     <aside

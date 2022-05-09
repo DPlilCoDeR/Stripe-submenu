@@ -8,30 +8,30 @@ export const AppProvider = ({ children }) => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
 
   function openSidebar () {
-    return setIsSidebarOpen(true)
+    setIsSidebarOpen(true)
   }
 
   function closeSidebar () {
-    return setIsSidebarOpen(false)
+    setIsSidebarOpen(false)
   }
 
   function openSubmenu () {
-    return setIsSubmenuOpen(true)
+    setIsSubmenuOpen(true)
   }
 
   function closeSubmenu () {
-    return setIsSubmenuOpen(false)
+    setIsSubmenuOpen(false)
   }
   return (
     <AppContext.Provider
-      value={
-        (isSidebarOpen,
+      value={{
+        isSidebarOpen,
         isSubmenuOpen,
         openSidebar,
         closeSidebar,
         openSubmenu,
-        closeSubmenu)
-      }
+        closeSubmenu
+      }}
     >
       {children}
     </AppContext.Provider>
@@ -41,7 +41,7 @@ export const AppProvider = ({ children }) => {
 export const GlobalContext = () => {
   const context = useContext(AppContext)
   if (context === undefined) {
-    throw new Error('useUserContext was used outside of its Provider')
+    throw new Error('useGlobalContext was used outside of its Provider')
   }
   return context
 }

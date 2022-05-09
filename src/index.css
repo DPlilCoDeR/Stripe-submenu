@@ -191,7 +191,7 @@ Stripe Styles
 .hero {
   position: relative;
   min-height: 100vh;
-  margin-top: -5rem;
+  margin-top: 0rem;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
