@@ -166,6 +166,7 @@ Stripe Styles
   background: var(--clr-black);
   cursor: pointer;
   transition: var(--transition);
+  z-index: 1;
 }
 .btn:hover {
   background: var(--clr-grey-5);
@@ -191,7 +192,7 @@ Stripe Styles
 .hero {
   position: relative;
   min-height: 100vh;
-  margin-top: 0rem;
+  margin-top: -3rem;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
