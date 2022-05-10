@@ -4,29 +4,38 @@ import { FaBars } from 'react-icons/fa'
 import { useGlobalContext } from './context'
 
 const Navbar = () => {
-  const { openSidebar } = useGlobalContext()
+  const { openSidebar, openSubmenu } = useGlobalContext()
+
+  const handleSubmenu = e => {
+    e.preventDefault()
+    console.log('handle the submenu')
+    return openSubmenu()
+  }
 
   return (
     <nav>
       <div className='nav-center'>
         <div className='nav-header'>
           <img src={logo} alt='stripe-logo' className='nav-logo' />
-          <button
-            className='btn toggle-btn'
-            onClick={() => openSidebar()}
-          >
+          <button className='btn toggle-btn' onClick={() => openSidebar()}>
             <FaBars />
           </button>
         </div>
         <ul className='nav-links'>
           <li>
-            <button className='link-btn'>products</button>
+            <button className='link-btn' onMouseOver={handleSubmenu}>
+              products
+            </button>
           </li>
           <li>
-            <button className='link-btn'>developers</button>
+            <button className='link-btn' onMouseOver={handleSubmenu}>
+              developers
+            </button>
           </li>
           <li>
-            <button className='link-btn'>company</button>
+            <button className='link-btn' onMouseOver={handleSubmenu}>
+              company
+            </button>
           </li>
         </ul>
         <button className='btn signin-btn'>Sign in</button>

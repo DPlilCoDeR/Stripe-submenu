@@ -146,7 +146,7 @@ Stripe Styles
   justify-content: center;
   background: transparent;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 .nav-center {
   width: 90vw;
@@ -196,12 +196,14 @@ Stripe Styles
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  z-index: -1;
 }
 .hero-center {
   width: 90vw;
   max-width: var(--max-width);
   display: grid;
   align-items: center;
+  z-index: -1;
 }
 
 .hero-info h1 {
