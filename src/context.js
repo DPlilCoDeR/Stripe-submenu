@@ -38,7 +38,7 @@ export const AppProvider = ({ children }) => {
   )
 }
 
-export const GlobalContext = () => {
+export const useGlobalContext = () => {
   const context = useContext(AppContext)
   if (context === undefined) {
     throw new Error('useGlobalContext was used outside of its Provider')

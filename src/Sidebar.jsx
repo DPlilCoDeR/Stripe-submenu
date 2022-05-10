@@ -1,10 +1,10 @@
 import React from 'react'
 import { FaTimes } from 'react-icons/fa'
 import sublinks from './data'
-import { GlobalContext } from './context'
+import { useGlobalContext } from './context'
 
 const Sidebar = () => {
-  const { closeSidebar, isSidebarOpen } = GlobalContext()
+  const { closeSidebar, isSidebarOpen } = useGlobalContext()
 
   return (
     <div

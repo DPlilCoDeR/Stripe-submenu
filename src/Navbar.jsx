@@ -1,10 +1,10 @@
 import React from 'react'
 import logo from './images/logo.svg'
 import { FaBars } from 'react-icons/fa'
-import { GlobalContext } from './context'
+import { useGlobalContext } from './context'
 
 const Navbar = () => {
-  const { openSidebar } = GlobalContext()
+  const { openSidebar } = useGlobalContext()
 
   return (
     <nav>
